@@ -1,0 +1,45 @@
+ゲーム部分、変数一覧
+
+GameMain クラス
+
+
+	/*クラス変数*/
+
+	static String[][] board	//盤面、int[][]にしたかったがAI部分等に合わせたためString[][]
+	static int teban = 1	//手番、1:プレイヤー、0:CP
+	static int pass		//パスの状態、0:パス無、1:パス有、2:両者パスでゲーム終了
+	static int level	//レベル、コンストラクタで格納する
+
+	/*インスタンス変数*/
+
+	HyouziSyori hyoGameSyori //表示処理インスタンス
+	GameSyori game_syori	//ゲーム処理インスタンス
+
+
+GameSyori　クラス
+
+
+	/*インスタンス変数*/
+
+	int row;		//入力された行
+	int col;		//入力された列
+	int masu_cnt = 60;	//残りマス数
+	StringBuilder log	//打った位置のログ
+
+	KeyboardInput input;		//キーボード入力インスタンス
+	Ai cp;				//AI部分インスタンス
+	HantenSyori hanten_syori;	//コマ反転処理インスタンス
+	OkeruHantei okeru_hantei;	//置ける位置かどうか判定する処理インスタンス
+
+	/*ローカル変数*/
+
+	String input_str;	//入力された文字列を受け取る
+
+
+HyouziSyori　クラス
+
+	/*インスタンス変数*/
+
+	int kuro	//黒の数、集計用
+	int siro	//白の数
+
